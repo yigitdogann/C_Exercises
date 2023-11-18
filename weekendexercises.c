@@ -39,3 +39,28 @@
     }
     return 0;
 }*/
+
+int main(void){
+    int num1;
+    int num2;
+    int decideIt;
+    printf("enter enter your first number: ");
+    scanf("%d", &num1);
+    printf("enter enter your second number: ");
+    scanf("%d", &num2);
+    printf("sum-1, substract-2, multiply-3, divide-4\nChoose one of them: ");
+    scanf("%d", &decideIt);
+    switch (decideIt){
+    case 1:
+        printf("result is: %d", num1+num2);
+        break;
+    case 2:
+        printf("result is: %d", num1-num2);
+        break;
+    case 3:
+        printf("result is: %d", num1*num2);
+        break;
+    case 4:
+        printf("result is: %d", num1/num2);
+    }
+}
