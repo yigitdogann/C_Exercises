@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*int main (void){
+int main (void){
     int num1;
     int num2;
     int decideIt;
@@ -20,7 +20,7 @@
         printf("result is: %d", num1/num2);
     }
     return 0;
-}*/
+}
 
 /*int main(void){
     int num1;
@@ -62,5 +62,11 @@ int main(void){
         break;
     case 4:
         printf("result is: %d", num1/num2);
+        break;
+    default:
+        printf("please choose correctly!");
+        break;
     }
+    
+    return 0;
 }
