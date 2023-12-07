@@ -7,7 +7,7 @@ int main (void){
     printf("I want a tree with height of: ");
     scanf("%d", &rows);
     
-    for(int j = 1; j<=rows; j++){//i is current row
+    for(int j = 1; j<=rows; j++){//j is current row
     
         for(int i = 1; i<=(rows-j); i++){
             printf(" ");
@@ -17,7 +17,7 @@ int main (void){
             printf("*");
         }
         printf("\n");
-        
     }
+    
     return 0;
 }
