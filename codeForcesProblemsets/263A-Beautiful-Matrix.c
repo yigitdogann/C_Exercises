@@ -1,25 +1,27 @@
 #include <stdio.h>
 
 int main(void){
-    int inputR=0;
-    int x=0, y=0, c, r, a, b;
+    int x=0, y=0, i=0, move=0;
 
-    for(c=1; c<=5; c++){//i is current column
-        for (r=1; r<=5; r++){
-            scanf("%d ", &inputR);
-            if(inputR==1){
-                x=c;
-                y=r;
+    for(int c=1; c<=5; c++){//c is current column
+        for(int r=1; r<=5; r++){
+            scanf("%d ", &i);
+            
+            if(i==1){//i is input
+                if(c<3){
+                    move=(3-c);
+                }else{
+                    move=(c-3);
+                }
+
+                if(r<3){
+                    move=move+(3-r);
+                }else{
+                    move=move+(r-3);
+                }
             }
         }
     }
-    a=x-c;
-    b=y-r;
-    if((x-c)<0){
-        a=c-x;
-    }if((y-r)<0){
-        b=r-y;
-    }
-    printf("%d", a+b);
+    printf("%d", move);
     return 0;
 }
