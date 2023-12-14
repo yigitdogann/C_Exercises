@@ -1,11 +1,17 @@
 #include <stdio.h>
 
 int main(void){
-    int n=0;
+    int n=0, move=0;
     scanf("%d", &n);//n=number of stones
-    char colors[n];
+    char s[n+1];
+    scanf("%s", s);
 
-    for(int i=1; i<=n; i++){
-        scanf("%s", colors);
-    }//n adet renk sayısı al R-ed G-reen B-lue
+    for(int i=0; i<n; i++){
+        if(s[i]==s[i+1]){
+            move++;
+        }
+    }
+    
+    printf("%d", move);
+    return 0;
 }
