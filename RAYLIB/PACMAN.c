@@ -15,36 +15,50 @@ int main(void){
         Color color1;
     }player;
     
+    Rectangle block = {0};
+            //block features
+            block.x=500;
+            block.y=900;
+            block.width=20;
+            block.height=100;
+    
     player pacman = {0};
             //pacman features 
             pacman.active = true;
             pacman.position.x = 100;
             pacman.position.y = 100;
             pacman.radius = 30;
-            pacman.color1 = YELLOW;
-    
+            pacman.color1 = GOLD;
     
     while(!WindowShouldClose()){
         if((IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) && pacman.position.x - pacman.radius> 0){
-            pacman.position.x += -5; 
+            pacman.position.x += -6;
         }
         if((IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) && pacman.position.x + pacman.radius< 1000){
-            pacman.position.x += +5; 
+            pacman.position.x += +6; 
         }
-        if((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && pacman.position.y - pacman.radius> 0){
-            pacman.position.y += -5;
+        if((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && pacman.position.y - pacman.radius> 40){
+            pacman.position.y += -6;
         }
         if((IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN)) && pacman.position.y + pacman.radius< 600){
-            pacman.position.y += +5;
+            pacman.position.y += +6;
         }
+        
+        //CheckCollisionCircleRec(pacman, pacman.radius, block);
         
         BeginDrawing();
             
-            ClearBackground(LIGHTGRAY);
+            ClearBackground(GRAY);
             DrawText("hi there!", 450, 0, 20, BLACK);
             DrawText("This is my drawing example", 360, 20, 20, BLACK);
             
-            DrawCircleSector(pacman.position, pacman.radius, 30, 330, 0, pacman.color1);
+            DrawCircleSector(pacman.position, pacman.radius, 30, 330, 360, pacman.color1);
+            DrawLine(0, 40, 1000, 40, BLACK);
+            DrawRectangle(0, 550, 20, 50, RAYWHITE);
+            DrawRectangle(250, 550, 20, 50, RAYWHITE);
+            DrawRectangle(500, 400, 20, 200, MAROON);
+            DrawRectangle(750, 550, 20, 50, RAYWHITE);
+            DrawRectangle(980, 550, 20, 50, RAYWHITE);
             
         EndDrawing();
     }
