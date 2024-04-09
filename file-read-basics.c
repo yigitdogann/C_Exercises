@@ -20,15 +20,6 @@ int main(void) {
 		
 	}//get string from file until the end. if its the end fgets will equal null.
 
-
-	char ch;
-	int lineNumber = 0;
-	while ((ch = fgetc(fPtr)) != EOF) {
-		if (ch == '\n') {
-			lineNumber++;
-		}
-	}
-	printf("%d", lineNumber);
 	
 	fclose(fPtr);
 	return 0;
