@@ -1,0 +1,3 @@
+﻿  barbut.c
+C:\Users\10\source\repos\barbut\barbut\barbut.c(20,8): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+  barbut.vcxproj -> C:\Users\10\source\repos\barbut\x64\Debug\barbut.exe
